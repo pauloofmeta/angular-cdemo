@@ -1,0 +1,21 @@
+<li>
+  <a *ngIf="!hasSubItems()" routerLink="5">{{label}}</a>
+
+  <ng-container  *ngIf="hasSubItems()">
+    <a  (click)="toogleSubmenu()">{{label}}</a>
+
+    <ul
+      *ngIf="subVisible"
+      class="submenu"
+      [@overlayAnimation]="{ value: 'subVisible' }"
+      (@overlayAnimation.start)="onAnimationStart($event)"
+      (click)="preventDocumentDefault = true"
+    >
+      <ng-template ngFor let-menu [ngForOf]="subItems">
+        <li>
+          <a>{{menu.label}}</a>
+        </li>
+      </ng-template>
+    </ul>
+  </ng-container>
+</li>

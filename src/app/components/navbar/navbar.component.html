@@ -2,6 +2,8 @@
   <ul class="menu-container">
     <menu-item label="Home" route="/home"></menu-item>   
     <menu-item label="Administração" route="/home" [subItems]="admItems"></menu-item>   
-    <menu-item label="Sobre" route="/hello"></menu-item>   
+    <menu-item label="Sobre" route="/about"></menu-item>   
   </ul>
+
+  <fa-icon [icon]="themIcon" (click)="toogleTheme()" [styles]="{'stroke': 'red', 'color': 'red'}"></fa-icon>
 </div>

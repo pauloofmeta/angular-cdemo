@@ -1,0 +1,21 @@
+/* Add application styles & imports to this file! */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,700;1,400&family=Poppins:wght@200;300&family=Roboto&display=swap');
+
+@import 'styles/colors';
+@import 'styles/themes';
+@import 'styles/animations';
+
+
+*, body {
+  color: var(--text-color);
+  margin: 0;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+}
+
+button {
+  font-family: 'Archivo', Arial, Helvetica, sans-serif;
+}

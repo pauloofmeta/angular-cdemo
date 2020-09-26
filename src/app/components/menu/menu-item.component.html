@@ -1,5 +1,5 @@
 <li>
-  <a *ngIf="!hasSubItems()" routerLink="5">{{label}}</a>
+  <a *ngIf="!hasSubItems()" [routerLink]="route">{{label}}</a>
 
   <ng-container  *ngIf="hasSubItems()">
     <a  (click)="toogleSubmenu()">{{label}}</a>
@@ -9,11 +9,11 @@
       class="submenu"
       [@overlayAnimation]="{ value: 'subVisible' }"
       (@overlayAnimation.start)="onAnimationStart($event)"
-      (click)="preventDocumentDefault = true"
+      (click)="preventDocumentDefault = true"      
     >
       <ng-template ngFor let-menu [ngForOf]="subItems">
-        <li>
-          <a>{{menu.label}}</a>
+        <li (click)="onSubItemClick()">
+          <a [routerLink]="menu.route">{{menu.label}}</a>
         </li>
       </ng-template>
     </ul>

@@ -1,5 +1,5 @@
 <li>
-  <a *ngIf="!hasSubItems()" [routerLink]="route">{{label}}</a>
+  <a *ngIf="!hasSubItems()" [routerLink]="route" routerLinkActive="is-active">{{label}}</a>
 
   <ng-container  *ngIf="hasSubItems()">
     <a  (click)="toogleSubmenu()">{{label}}</a>

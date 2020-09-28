@@ -15,6 +15,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { CompanyPageComponent } from './pages/company-page/company-page.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 export function themeFactory(themeService: ThemeService) {
   return () => themeService.setThemeOnStart();
@@ -36,7 +37,8 @@ export function themeFactory(themeService: ThemeService) {
     HomePageComponent,
     AboutPageComponent,
     UserPageComponent,
-    CompanyPageComponent
+    CompanyPageComponent,
+    BreadcrumbComponent
   ],
   providers: [
     ThemeService,

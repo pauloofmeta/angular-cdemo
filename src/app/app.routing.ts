@@ -18,15 +18,24 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    component: AboutPageComponent
+    component: AboutPageComponent,
+    data: {
+      breadcrumb: 'Sobre'
+    }
   },
   {
     path: 'user',
-    component: UserPageComponent
+    component: UserPageComponent,
+    data: {
+      breadcrumb: 'Usuários'
+    }
   },
   {
     path: 'company',
-    component: CompanyPageComponent
+    component: CompanyPageComponent,
+    data: {
+      breadcrumb: 'Empresas'
+    }
   }
 ];
 

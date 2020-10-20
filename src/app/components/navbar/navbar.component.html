@@ -5,5 +5,22 @@
     <menu-item label="Sobre" route="/about"></menu-item>   
   </ul>
 
-  <fa-icon [icon]="themIcon" (click)="toogleTheme()" [styles]="{'stroke': 'red', 'color': 'red'}"></fa-icon>
+  <div class="right-actions">
+    <div *ngIf="(getState | async).user as user">
+      <button mat-button class="user-email" [matMenuTriggerFor]="userMenu">
+        <span>{{user.email}}</span>
+      </button>
+
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item (click)="toogleTheme()">        
+          <span>Theme</span>
+          <mat-icon>brightness_6</mat-icon>
+        </button>
+
+        <button mat-menu-item (click)="logOut()">
+          Logout
+        </button>
+      </mat-menu>
+    </div>
+  </div>  
 </div>

@@ -1,0 +1,30 @@
+.container {
+  margin: 0 auto;
+
+  .sign-up {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px gray;
+    border-radius: 8px;
+    padding: 1em;
+  }
+
+  .sing-in-link {
+    font-size: 13px;
+    text-decoration: none;
+    text-align: right;
+    margin-top: 0.5em;
+  }
+
+  .sing-in-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 768px) {
+  .sign-up {
+    width: 25vw;
+  }
+}

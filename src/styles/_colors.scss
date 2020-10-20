@@ -4,6 +4,9 @@ $accent-color-dark: #fafafa;
 $text-color: #232323;
 $text-color-dark: #fafafa;
 
+$text-white: #fafafa;
+$text-white-dark: #fafafa;
+
 $background: #fafafa;
 $background-dark:  #5c5c5c;
 
@@ -21,6 +24,12 @@ $card-background-dark: #494949;
 $card-border: #eee;
 $card-border-dark: #5c5c5c;
 
+$danger-bg-color: #ffdfe5;
+$danger-color: #f0506e;
+
+$danger-bg-color-dark: #ffdfe5;
+$danger-color-dark: #f0506e;
+
 
 $colors: (
   --accent-color: ($accent-color, $accent-color-dark),
@@ -31,5 +40,8 @@ $colors: (
   --card-border: ($card-border, $card-border-dark),
   --text-color: ($text-color, $text-color-dark),
   --background: ($background, $background-dark),
-  --button-color: ($accent-color, $toolbar-color-dark)
+  --button-color: ($accent-color, $toolbar-color-dark),
+  --danger-bg-color:($danger-bg-color, $danger-bg-color-dark),
+  --danger-color:($danger-color, $danger-color-dark),
+  --text-white:  ($text-white, $text-white-dark)
 )

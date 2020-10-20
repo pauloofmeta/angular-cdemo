@@ -2,6 +2,10 @@ import { Component } from "@angular/core";
 import { ThemeService } from 'src/app/services/theme.service';
 import { MenuItemModel } from "../../models/menu-item.model";
 import { faAdjust } from "@fortawesome/free-solid-svg-icons";
+import { Store } from '@ngrx/store';
+import { AppState, selectAuthState } from 'src/app/store/app.state';
+import { Logout } from 'src/app/store/actions/auth.actions';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'navbar',
@@ -10,9 +14,15 @@ import { faAdjust } from "@fortawesome/free-solid-svg-icons";
 })
 export class NavbarComponent {
   admItems: MenuItemModel[];
-  themIcon = faAdjust;
+  
+  getState: Observable<any>;
 
-  constructor(private themeService: ThemeService) {
+  constructor(
+    private themeService: ThemeService,
+    private store: Store<AppState>
+  ) {
+    this.getState = this.store.select(selectAuthState);
+
     this.admItems = [
       {
         label: 'Usuários',
@@ -27,5 +37,9 @@ export class NavbarComponent {
 
   toogleTheme() {
     this.themeService.toogle();
+  }
+
+  logOut() {
+    this.store.dispatch(new Logout);
   }
 }

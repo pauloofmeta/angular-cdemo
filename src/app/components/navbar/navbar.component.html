@@ -1,14 +1,26 @@
-<div class="menu">
-  <ul class="menu-container">
-    <menu-item label="Home" route="/home"></menu-item>   
-    <menu-item label="Administração" route="/home" [subItems]="admItems"></menu-item>   
-    <menu-item label="Sobre" route="/about"></menu-item>   
-  </ul>
+<div class="app-bar">
+  <div class="bar-container">
+    <button class="btn-menu" mat-icon-button>
+      <mat-icon class="btn-menu-icon" >menu</mat-icon>
+    </button>
+
+    <img class="logo" src="assets/logo.svg" alt="logo">
+
+    <ul class="menu">
+      <menu-item label="Home" route="/home"></menu-item>   
+      <menu-item label="Administração" route="/home" [subItems]="admItems"></menu-item>   
+      <menu-item label="Sobre" route="/about"></menu-item>   
+    </ul>
+  </div>
 
   <div class="right-actions">
-    <div *ngIf="(getState | async).user as user">
-      <button mat-button class="user-email" [matMenuTriggerFor]="userMenu">
-        <span>{{user.email}}</span>
+    <!-- <div *ngIf="(getState | async).user as user"> -->
+    <div>
+      <button mat-button [matMenuTriggerFor]="userMenu">
+        <div class="user">
+          <span>usuario.modelo@test.com</span>
+          <img class="avatar" src="assets/user.svg" alt="avatar" />
+        </div>
       </button>
 
       <mat-menu #userMenu="matMenu">

@@ -1,11 +1,21 @@
-.menu {
+.app-bar {
   display: flex;
   flex-direction: row;
   align-items: center;
+  align-content: center;
   background-color: var(--toolbar-color);
-  padding: 0 10px;
+  padding: 0px 5px 0px 10px;
+  justify-content: space-between;
 
-  .menu-container {
+  .bar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    padding: 5px 0;
+  }
+
+  .menu {
     list-style: none;
     list-style-type: none;    
     width: 100%;    
@@ -15,6 +25,11 @@
     align-items: center;
     padding: 0;
   }
+
+  .logo {
+    width: 180px;
+    margin-right: 0.8rem;
+  }
 }
 
 .right-actions {
@@ -22,7 +37,37 @@
   flex-direction: row;  
 }
 
-.user-email {
+.user {
   color: var(--text-white);
-  margin-right: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  padding: 0.2rem;
+
+  span {
+    margin-right: 0.5rem;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    width: 40px;
+  }
+}
+
+.btn-menu {
+  display: none;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .menu { display: none !important; }
+
+  .btn-menu {
+    display: block;
+  }
+
+  .user {
+    span {
+      display: none;
+    }
+  }
 }

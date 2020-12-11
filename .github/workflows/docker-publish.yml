@@ -1,0 +1,19 @@
+name: Docker Image
+on:
+  push:
+    branches: [ master ]
+jobs:
+  push_to_registry:
+    name: cria uma nova imagem no docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: pauloofmeta/angular-cdemo
+          tag_with_ref: true
